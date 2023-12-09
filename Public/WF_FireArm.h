@@ -23,7 +23,7 @@ enum class EFireArmType : uint8
 
 /* Firearm Firing Mode */
 UENUM()
-enum class EFirArmMode : uint8
+enum class EFireArmMode : uint8
 {
 	Single,
 	Automatic,
@@ -44,6 +44,11 @@ public:
 #pragma region // Attributes
 	/* These attributes effect how a fire arm behave, from firing rate, accuracy, and damage per bullet. */
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Attributes")
+	EFireArmType FireArmType;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Attributes")
+	EFireArmMode FireArmMode;
+	
 	// How fast this firearm can fire. (bullet per minute)
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Attributes")
 	float FiringRate;

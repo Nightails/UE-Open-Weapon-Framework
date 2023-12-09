@@ -7,6 +7,8 @@
 AWF_FireArm::AWF_FireArm()
 {
 	// Initializing variables
+	FireArmType = EFireArmType::Pistol;
+	FireArmMode = EFireArmMode::Single;
 	FiringRate = 5.f;
 	SpreadMaxAngle = 5.f;
 
