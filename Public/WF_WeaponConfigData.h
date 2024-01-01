@@ -58,6 +58,11 @@ public:
 	UFUNCTION(BlueprintCallable, Category="WeaponFramework|FireArm")
 	EFirearmMode GetFireArmMode() const { return FirearmMode; }
 
+	UFUNCTION(BlueprintCallable, Category="WeaponFramework")
+	USkeletalMesh* GetWeaponSkeletalMesh() const {return WeaponSkeletalMesh; }
+	UFUNCTION(BlueprintCallable, Category="WeaponFramework")
+	TSubclassOf<UAnimInstance> GetWeaponAnimInstanceClass() const {return WeaponAnimInstanceClass; }
+
 protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Weapon Configuration")
 	EWeaponType WeaponType;
@@ -72,7 +77,7 @@ protected:
 	TObjectPtr<USkeletalMesh> WeaponSkeletalMesh;
 	// Can leave un-assign, if there is no animation for this weapon.
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Weapon Visuals")
-	TObjectPtr<UAnimInstance> WeaponAnimInstance;
+	TSubclassOf<UAnimInstance> WeaponAnimInstanceClass;
 	
 	/** Attachments:
 	 * - Scope
